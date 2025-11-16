@@ -5,11 +5,13 @@ const userRoutes = require('./routes/user.routes');
 
 app.use(express.json());
 
+// Route utama
 app.get('/', (req, res) => {
     res.send('Hello World!');
-app.use('/api/users', userRoutes);
 });
 
+// Route users
+app.use('/api/users', userRoutes);
 
 app.listen(port, () => {
     console.log(`Server berjalan di http://localhost:${port}`);
